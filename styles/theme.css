@@ -7055,7 +7055,7 @@ blockquote {
   content: "\e808";
   line-height: 30px;
 }
-#footer .btn-top-page:hover {
+#footer .btn-top-page:focus, #footer .btn-top-page:hover, #footer .btn-top-page:visited {
   text-decoration: none;
 }
 #footer .nav-links ul {
@@ -7176,6 +7176,9 @@ blockquote {
 
 .page-home .hero .bg {
   background-image: url(../images/home/bg-hero.jpg);
+}
+.page-home .hero article {
+  padding-top: 50px;
 }
 .page-home .hero article .image-product {
   position: relative;
@@ -7353,6 +7356,9 @@ blockquote {
 .page-products .customers .testimonials {
   display: inline-block;
 }
+.page-products .customers .testimonials ul {
+  padding-left: 0;
+}
 .page-products .customers .testimonials .testimonial {
   margin-bottom: 40px;
 }
@@ -7367,9 +7373,6 @@ blockquote {
 }
 .page-products .customers .testimonials .testimonial .avatar .avatar-content img {
   max-width: 100%;
-}
-.page-products .customers .testimonials .testimonial .testimonial-content {
-  padding-left: 25px;
 }
 .page-products .customers .testimonials .testimonial .testimonial-content blockquote {
   font-style: italic;
@@ -7405,6 +7408,9 @@ blockquote {
   }
   .page-products .customers .testimonials .testimonial .avatar {
     margin-bottom: 0;
+  }
+  .page-products .customers .testimonials .testimonial .testimonial-content {
+    padding-left: 25px;
   }
 }
 @media (min-width: 992px) {

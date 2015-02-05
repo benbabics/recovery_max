@@ -55,6 +55,7 @@ function js_in_head() {
     ?>
         <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/scripts/vendor.js"></script>
         <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/scripts/plugins.js"></script>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/scripts/main.js"></script>
 
 <?php }
 add_action('wp_head', 'js_in_head');
