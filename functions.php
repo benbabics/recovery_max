@@ -28,6 +28,54 @@
 // add_theme_support( 'thematic_legacy_comment_form' );
 // add_theme_support( 'thematic_legacy_comment_handling' );
 
+
+// Override nasty items in the header
+function childtheme_override_blogtitle() {}
+function childtheme_override_blogdescription() {}
+
+function childtheme_override_access() {
+    echo  wp_nav_menu( thematic_nav_menu_args() );
+}
+
+
+// Gets post cat slug and looks for single-[cat slug].php and applies it
+function single_template_from_category($the_template) {
+    foreach( (array) get_the_category() as $cat ) {
+        if ( file_exists(STYLESHEETPATH . "/single-{$cat->slug}.php") )
+        return STYLESHEETPATH . "/single-{$cat->slug}.php";
+    }
+
+    return $the_template;
+}
+add_filter('single_template', 'single_template_from_category');
+
+
+// Addition of JS libs
+function js_in_head() {
+    ?>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/scripts/vendor.js"></script>
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/scripts/plugins.js"></script>
+
+<?php }
+add_action('wp_head', 'js_in_head');
+
+
+// Add brand logo to header
+function add_brand_logo() {
+    ?>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/header/brand-logo.svg" alt="Recovery Max">
+    <?php
+}
+
+
+// Add brand logo to header
+function add_northamerica_map() {
+    ?>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/stores/map-north-america.png">
+    <?php
+}
+
+
 /**
  * Define theme setup
  */
