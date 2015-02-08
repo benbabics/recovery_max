@@ -83,7 +83,7 @@
                     </section>
 
 
-                    <section class="section faq full-height">
+                    <section class="section faq">
                         <div class="clip"><div class="bg bg-bg-chrome"></div></div>
 
                         <article>

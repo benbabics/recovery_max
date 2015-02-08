@@ -1537,7 +1537,7 @@ mark,
 
 .text-center, #header #menu-collapsible ul li, #footer .container, #footer .section article, .section #footer article,
 #footer .section .article,
-.section #footer .article, #footer .btn-top-page:before, .page-home .hero article, .page-home .brands article, .page-home .why, .page-home .what article, .page-products .hero article, .page-products .customers, .page-product .hero, .page-product .hero .product-content .buttons, .page-product .faq article .tabs, .page-stores .hero article {
+.section #footer .article, #footer .btn-top-page:before, .page-home .hero article, .page-home .brands article, .page-home .why, .page-home .what article, .page-products .hero article, .page-products .why article .content-why, .page-products .customers, .page-product .hero, .page-product .hero .product-content .buttons, .page-product .faq article .tabs, .page-stores .hero article {
   text-align: center;
 }
 
@@ -6863,7 +6863,7 @@ blockquote {
 
 .text-center, #header #menu-collapsible ul li, #footer .container, #footer .section article, .section #footer article,
 #footer .section .article,
-.section #footer .article, #footer .btn-top-page:before, .page-home .hero article, .page-home .brands article, .page-home .why, .page-home .what article, .page-products .hero article, .page-products .customers, .page-product .hero, .page-product .hero .product-content .buttons, .page-product .faq article .tabs, .page-stores .hero article {
+.section #footer .article, #footer .btn-top-page:before, .page-home .hero article, .page-home .brands article, .page-home .why, .page-home .what article, .page-products .hero article, .page-products .why article .content-why, .page-products .customers, .page-product .hero, .page-product .hero .product-content .buttons, .page-product .faq article .tabs, .page-stores .hero article {
   text-align: center;
 }
 
@@ -6884,13 +6884,6 @@ blockquote {
   color: #ff8300;
 }
 
-.page-home .why li .item-content {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
 .full-width {
   position: relative;
   width: 100%;
@@ -6898,7 +6891,7 @@ blockquote {
 
 .full-height {
   position: relative;
-  height: 90vmin;
+  min-height: 90vmin;
 }
 
 .clip {
@@ -7174,11 +7167,30 @@ blockquote {
   }
 }
 
+.retailers-content tr td {
+  padding: 0 10px;
+}
+@media (min-width: 768px) {
+  .retailers-content tr td {
+    padding: 0 30px;
+  }
+}
+.retailers-content tr td:first-child {
+  padding-left: 0;
+}
+.retailers-content tr td:last-child {
+  padding-right: 0;
+}
+.retailers-content tr td img {
+  max-width: 100%;
+}
+
 .page-home .hero .bg {
   background-image: url(../images/home/bg-hero.jpg);
 }
 .page-home .hero article {
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 .page-home .hero article .image-product {
   position: relative;
@@ -7242,6 +7254,9 @@ blockquote {
   background-image: linear-gradient(to top, #ff8300 0%, #ffa358 60%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFF8300', endColorstr='#FFFFA358', GradientType=0);
 }
+.page-home .brands article .retailers-content img {
+  opacity: .5;
+}
 .page-home .why {
   padding: 80px 40px;
   background: fixed url(../images/common/bg-wall.jpg) center;
@@ -7261,11 +7276,10 @@ blockquote {
   list-style: none;
 }
 .page-home .why li {
-  padding-left: 155px;
-  height: 115px;
-  text-align: left;
+  padding-top: 135px;
+  text-align: center;
   color: #aaa;
-  background-position: left top;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 .page-home .why li.barbell {
@@ -7289,6 +7303,21 @@ blockquote {
 .page-home .why li + li {
   margin-top: 50px;
 }
+@media (min-width: 768px) {
+  .page-home .why li {
+    padding-top: 0;
+    padding-left: 155px;
+    height: 115px;
+    text-align: left;
+    background-position: left top;
+  }
+  .page-home .why li .item-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
 .page-home .what .bg {
   background-image: url(../images/home/bg-what.jpg);
 }
@@ -7305,44 +7334,29 @@ blockquote {
   padding-bottom: 80px;
 }
 .page-products .why {
-  background: url(../images/products/bg-why.jpg) center top no-repeat;
+  background: url(../images/products/bg-why.jpg) center bottom no-repeat;
   background-size: cover;
 }
 .page-products .why article {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  display: table;
+  width: 100%;
 }
 .page-products .why article .content-why {
-  position: relative;
+  display: table-cell;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  vertical-align: middle;
+  height: 475px;
+}
+.page-products .why article .content-why h1, .page-products .why article .content-why h2, .page-products .why article .content-why h3, .page-products .why article .content-why h4, .page-products .why article .content-why h5, .page-products .why article .content-why h6, .page-products .why article .content-why p {
+  margin-bottom: 15px;
 }
 .page-products .why article .content-why h1, .page-products .why article .content-why h2, .page-products .why article .content-why h3, .page-products .why article .content-why h4, .page-products .why article .content-why h5, .page-products .why article .content-why h6 {
   font-size: 27px;
   line-height: 40px;
 }
-.page-products .why article .content-why:before {
-  display: none;
-  top: 0;
-  left: 50%;
-  margin-left: -150px;
-  width: 300px;
-  height: 300px;
-  content: "";
-  background: url(../images/products/ui-pain.png) center no-repeat;
-  background-size: 100%;
-}
-@media (min-width: 992px) {
-  .page-products .why {
-    background-position: left top;
-  }
-  .page-products .why article .content-why {
-    padding-left: 400px;
-  }
-  .page-products .why article .content-why:before {
-    display: block;
-    position: absolute;
-    left: 0;
-    margin-left: 0;
-  }
+.page-products .why article .content-why p:last-of-type {
+  margin-bottom: 0;
 }
 .page-products .customers {
   padding: 80px 40px;
@@ -7528,7 +7542,7 @@ blockquote {
   list-style: none;
 }
 .page-product .faq article .tabs ul li {
-  margin: 0 8px;
+  margin: 0 8px 5px;
 }
 .page-product .faq article .tabs ul li .btn-outline {
   display: block;
@@ -7557,6 +7571,12 @@ blockquote {
   .page-product .faq article .tabs li {
     float: left;
     min-width: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .page-product .faq {
+    position: relative;
+    min-height: 90vmin;
   }
 }
 

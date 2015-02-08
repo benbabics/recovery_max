@@ -61,6 +61,22 @@
                     <section class="section retailers">
                         <article class="retailers-national-content">
                             <h3>National Retailers</h3>
+
+                            <?php
+                            $post_objects = get_field( 'national_retailers_list' );
+
+                            if( $post_objects ): ?>
+                                <table class="retailers-content">
+                                    <tbody>
+                                        <tr>
+                                            <?php foreach( $post_objects as $post_object): ?>
+                                                <td><img src="<?php echo the_field( 'retailer_image', $post_object->ID ); ?>" alt="<?php the_field( 'retailer_name', $post_object->ID ); ?>"></td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </ul>
+                            <?php endif; ?>
                         </article>
 
                         <article class="retailers-regional-content">

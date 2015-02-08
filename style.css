@@ -18,4 +18,4 @@ This work, like WordPress, is released under GNU General Public License, version
 */
 
 /* Theme */
-@import url('styles/theme.css');
+@import url('styles/theme.min.css');

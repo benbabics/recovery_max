@@ -73,11 +73,21 @@
 
                     <section class="section brands">
                         <article>
-                            <img src="http://lorempixel.com/180/70/" class="invisible">
-                            <img src="http://lorempixel.com/180/70/" class="invisible">
-                            <img src="http://lorempixel.com/180/70/" class="invisible">
-                            <img src="http://lorempixel.com/180/70/" class="invisible">
-                            <img src="http://lorempixel.com/180/70/" class="invisible">
+                            <?php
+                            $post_objects = get_field( 'national_retailers_list' );
+
+                            if( $post_objects ): ?>
+                                <table class="retailers-content">
+                                    <tbody>
+                                        <tr>
+                                            <?php foreach( $post_objects as $post_object): ?>
+                                                <td><img src="<?php echo the_field( 'retailer_image', $post_object->ID ); ?>" alt="<?php the_field( 'retailer_name', $post_object->ID ); ?>"></td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </ul>
+                            <?php endif; ?>
                         </article>
                     </section>
 
